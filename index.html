@@ -1,0 +1,1049 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>91拨罗卜_短视频创作者社区_热门短剧与直播内容</title>
+<meta name="description" content="91拨罗卜是一个聚焦短视频与直播内容的创作者社区，汇总短剧、搞笑段子、生活记录、美食探店、直播回放等具体内容条目，提供更新动态、分类入口与观看指南，适合喜欢短视频与直播的观众与创作者浏览。">
+<meta name="keywords" content="短视频社区,短剧更新,直播回放,搞笑段子,美食探店">
+<style>
+:root{
+  --bg:#0f1117;
+  --bg-soft:#151823;
+  --panel:#1a1e2b;
+  --panel-2:#202533;
+  --line:#2b3142;
+  --text:#e8eaf0;
+  --text-dim:#a3a9ba;
+  --text-mute:#7b8298;
+  --brand:#ff6a3d;
+  --brand-2:#ffb648;
+  --accent:#4dd4ac;
+  --accent-2:#5b9dff;
+  --radius:14px;
+  --radius-sm:9px;
+  --shadow:0 8px 28px rgba(0,0,0,.35);
+  --max:1320px;
+  --sticky-h:104px;
+  --font:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:var(--font);font-size:15px;line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+h1,h2,h3,h4{margin:0;line-height:1.35}
+p{margin:0 0 12px}
+ul,ol{margin:0;padding-left:20px}
+button{font-family:inherit}
+
+/* ---------- sticky bar ---------- */
+.announce{
+  position:sticky;top:0;z-index:60;
+  background:linear-gradient(90deg,#2a1a10,#3a2213 40%,#22180f);
+  border-bottom:1px solid #4a2e1a;
+  font-size:13px;
+}
+.announce-inner{
+  max-width:var(--max);margin:0 auto;padding:7px 20px;
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+}
+.announce .dot{width:7px;height:7px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 3px rgba(255,106,61,.18);flex:none}
+.announce b{color:var(--brand-2);font-weight:600}
+.announce .sep{color:#6b5240}
+.announce .more{margin-left:auto;color:var(--brand-2);font-weight:600;white-space:nowrap}
+.announce .more:hover{text-decoration:underline}
+
+header.site{
+  position:sticky;top:33px;z-index:55;
+  background:rgba(15,17,23,.94);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  max-width:var(--max);margin:0 auto;padding:12px 20px;
+  display:flex;align-items:center;gap:20px;flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:10px;flex:none}
+.brand-mark{width:38px;height:38px;flex:none}
+.brand-text{display:flex;flex-direction:column;line-height:1.15}
+.brand-text .cn{font-size:19px;font-weight:800;letter-spacing:.5px}
+.brand-text .en{font-size:10px;color:var(--text-mute);letter-spacing:2px;text-transform:uppercase}
+nav.main{display:flex;gap:4px;flex-wrap:wrap;font-size:14px}
+nav.main a{
+  padding:6px 11px;border-radius:8px;color:var(--text-dim);
+  transition:.18s;white-space:nowrap;
+}
+nav.main a:hover,nav.main a:focus-visible{background:var(--panel-2);color:var(--text);outline:none}
+nav.main a.active{color:var(--brand-2);background:rgba(255,106,61,.12)}
+.header-actions{margin-left:auto;display:flex;align-items:center;gap:10px}
+.search-wrap{display:flex;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:0 6px 0 12px;transition:.2s}
+.search-wrap:focus-within{border-color:var(--brand);box-shadow:0 0 0 3px rgba(255,106,61,.14)}
+.search-wrap input{
+  background:transparent;border:0;color:var(--text);font-size:13px;
+  padding:8px 0;width:150px;outline:none;
+}
+.search-wrap input::placeholder{color:var(--text-mute)}
+.search-wrap button{
+  background:var(--brand);color:#1a0e07;border:0;border-radius:7px;
+  font-size:12px;font-weight:700;padding:6px 12px;cursor:pointer;
+}
+.search-wrap button:hover{background:var(--brand-2)}
+.btn-join{
+  background:linear-gradient(135deg,var(--brand),var(--brand-2));
+  color:#20100a;font-weight:700;font-size:13px;border-radius:9px;
+  padding:9px 16px;white-space:nowrap;border:0;cursor:pointer;
+}
+.btn-join:hover{filter:brightness(1.08)}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(900px 380px at 82% -10%,rgba(255,106,61,.16),transparent 65%),
+    radial-gradient(700px 340px at 10% 110%,rgba(77,212,172,.10),transparent 60%),
+    var(--bg-soft);
+}
+.hero-inner{
+  max-width:var(--max);margin:0 auto;padding:46px 20px 52px;
+  display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;color:var(--brand-2);border:1px solid rgba(255,182,72,.35);
+  background:rgba(255,182,72,.08);padding:4px 12px;border-radius:100px;margin-bottom:18px;
+}
+.hero h1{
+  font-size:clamp(34px,5vw,58px);font-weight:900;letter-spacing:1px;
+  background:linear-gradient(100deg,#fff 10%,var(--brand-2) 55%,var(--brand) 95%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  margin-bottom:16px;
+}
+.hero p.lead{color:var(--text-dim);font-size:16px;max-width:540px;margin-bottom:24px}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.hero-cta .primary{
+  background:var(--brand);color:#1c0d06;font-weight:800;font-size:14px;
+  padding:11px 22px;border-radius:10px;border:0;cursor:pointer;
+}
+.hero-cta .primary:hover{background:var(--brand-2)}
+.hero-cta .ghost{
+  border:1px solid var(--line);color:var(--text);font-size:14px;font-weight:600;
+  padding:11px 22px;border-radius:10px;background:var(--panel);
+}
+.hero-cta .ghost:hover{border-color:var(--brand);color:var(--brand-2)}
+.hero-stats{display:flex;gap:28px;flex-wrap:wrap}
+.hero-stats div{display:flex;flex-direction:column}
+.hero-stats b{font-size:22px;color:var(--brand-2);font-weight:800;line-height:1.2}
+.hero-stats span{font-size:12px;color:var(--text-mute)}
+.hero-art{position:relative;min-height:280px;display:flex;align-items:center;justify-content:center}
+.hero-art svg{width:100%;max-width:420px;height:auto;filter:drop-shadow(0 18px 40px rgba(255,106,61,.18))}
+
+/* ---------- layout ---------- */
+.container{max-width:var(--max);margin:0 auto;padding:0 20px}
+.layout{
+  display:grid;grid-template-columns:180px minmax(0,1fr) 258px;
+  gap:26px;align-items:start;padding:32px 0 60px;
+}
+aside.left,aside.right{position:sticky;top:calc(var(--sticky-h) + 14px)}
+.panel{
+  background:var(--panel);border:1px solid var(--line);
+  border-radius:var(--radius);padding:16px;
+}
+.panel + .panel{margin-top:18px}
+.panel h3{
+  font-size:13px;color:var(--text-mute);font-weight:700;
+  letter-spacing:1px;margin-bottom:12px;text-transform:uppercase;
+}
+.channel-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:2px}
+.channel-list a{
+  display:flex;align-items:center;gap:8px;padding:7px 9px;border-radius:8px;
+  font-size:14px;color:var(--text-dim);transition:.16s;
+}
+.channel-list a:hover,.channel-list a:focus-visible{background:var(--panel-2);color:var(--brand-2);outline:none}
+.channel-list a .bar{width:3px;height:14px;border-radius:2px;background:var(--line);flex:none}
+.channel-list a:hover .bar{background:var(--brand)}
+
+.main-col{min-width:0;display:flex;flex-direction:column;gap:30px}
+
+section.block{scroll-margin-top:calc(var(--sticky-h) + 16px)}
+.block-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.block-head h2{font-size:21px;font-weight:800;position:relative;padding-left:13px}
+.block-head h2::before{
+  content:"";position:absolute;left:0;top:6px;bottom:6px;width:4px;border-radius:3px;
+  background:linear-gradient(180deg,var(--brand),var(--brand-2));
+}
+.block-head .sub{font-size:13px;color:var(--text-mute)}
+.block-head .head-link{margin-left:auto;font-size:13px;color:var(--brand-2);font-weight:600}
+.block-head .head-link:hover{text-decoration:underline}
+
+/* intro */
+.intro-text{color:var(--text-dim);font-size:14.5px}
+.intro-text strong{color:var(--text);font-weight:700}
+
+/* cards */
+.card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;display:flex;flex-direction:column;transition:.2s;
+}
+.card:hover{border-color:#3a4257;transform:translateY(-2px);box-shadow:var(--shadow)}
+.card .thumb{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--panel-2)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.card:hover .thumb img{transform:scale(1.05)}
+.card .thumb .tag{
+  position:absolute;left:9px;top:9px;font-size:11px;font-weight:700;
+  background:rgba(15,17,23,.82);color:var(--brand-2);padding:3px 9px;border-radius:6px;
+  backdrop-filter:blur(4px);
+}
+.card .body{padding:13px 14px 15px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{font-size:15px;font-weight:700;line-height:1.4}
+.card .desc{font-size:12.5px;color:var(--text-dim);line-height:1.6;flex:1}
+.card .meta{display:flex;align-items:center;gap:10px;font-size:11.5px;color:var(--text-mute);padding-top:4px;border-top:1px dashed var(--line)}
+.card .meta .hot{color:var(--brand)}
+.mini-tags{display:flex;gap:6px;flex-wrap:wrap}
+.mini-tags span{font-size:10.5px;color:var(--text-dim);background:var(--panel-2);padding:2px 8px;border-radius:5px}
+
+/* update list */
+.update-list{display:flex;flex-direction:column;gap:0;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.update-item{
+  display:flex;align-items:center;gap:14px;padding:12px 16px;
+  border-bottom:1px solid var(--line);transition:.16s;
+}
+.update-item:last-child{border-bottom:0}
+.update-item:hover{background:var(--panel-2)}
+.update-item .time{font-size:12px;color:var(--brand-2);font-weight:600;white-space:nowrap;width:60px;flex:none}
+.update-item .u-title{font-size:14px;font-weight:700;flex:none;min-width:150px}
+.update-item .u-desc{font-size:13px;color:var(--text-dim);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.update-item .badge{font-size:11px;padding:2px 8px;border-radius:5px;background:rgba(77,212,172,.12);color:var(--accent);flex:none}
+
+/* category */
+.cat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.cat-tile{
+  background:linear-gradient(160deg,var(--panel-2),var(--panel));
+  border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:15px 14px;display:flex;flex-direction:column;gap:5px;transition:.18s;
+}
+.cat-tile:hover{border-color:var(--brand);transform:translateY(-2px)}
+.cat-tile b{font-size:15px;font-weight:700}
+.cat-tile span{font-size:11.5px;color:var(--text-mute);line-height:1.45}
+.cat-tile em{font-style:normal;font-size:11px;color:var(--brand-2);margin-top:2px}
+
+/* deep read */
+.read{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:26px 28px}
+.read h3{font-size:16.5px;font-weight:800;margin:22px 0 10px;color:var(--brand-2)}
+.read h3:first-child{margin-top:0}
+.read p{font-size:14.5px;color:var(--text-dim);line-height:1.85}
+.read ul,.read ol{color:var(--text-dim);font-size:14px;margin:8px 0 14px;line-height:1.85}
+.read li{margin-bottom:5px}
+.read strong{color:var(--text)}
+.read .callout{
+  background:rgba(255,106,61,.07);border-left:3px solid var(--brand);
+  border-radius:0 8px 8px 0;padding:12px 16px;font-size:13.5px;color:var(--text-dim);margin:14px 0;
+}
+
+/* guide steps */
+.steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.step{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 18px;display:flex;gap:14px;
+}
+.step .num{
+  flex:none;width:30px;height:30px;border-radius:9px;
+  background:linear-gradient(135deg,var(--brand),var(--brand-2));
+  color:#1c0d06;font-weight:900;font-size:14px;display:grid;place-items:center;
+}
+.step h4{font-size:14.5px;font-weight:700;margin-bottom:4px}
+.step p{font-size:12.5px;color:var(--text-dim);margin:0;line-height:1.65}
+
+/* faq */
+.faq{display:flex;flex-direction:column;gap:10px}
+details.faq-item{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);
+  overflow:hidden;
+}
+details.faq-item summary{
+  cursor:pointer;padding:14px 18px;font-size:14.5px;font-weight:700;
+  list-style:none;display:flex;align-items:center;gap:10px;transition:.16s;
+}
+details.faq-item summary::-webkit-details-marker{display:none}
+details.faq-item summary::before{
+  content:"+";color:var(--brand);font-weight:900;font-size:17px;width:16px;flex:none;
+}
+details.faq-item[open] summary::before{content:"−"}
+details.faq-item summary:hover{background:var(--panel-2)}
+details.faq-item .a{padding:0 18px 16px 44px;font-size:13.5px;color:var(--text-dim);line-height:1.8}
+
+/* comments */
+.comments{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.comment{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:13px 15px;
+}
+.comment .who{display:flex;align-items:center;gap:9px;margin-bottom:7px}
+.comment .avatar{
+  width:28px;height:28px;border-radius:50%;flex:none;
+  display:grid;place-items:center;font-size:12px;font-weight:800;color:#1a0e07;
+  background:linear-gradient(135deg,var(--brand-2),var(--brand));
+}
+.comment .name{font-size:13px;font-weight:700}
+.comment .when{font-size:11px;color:var(--text-mute);margin-left:auto}
+.comment p{font-size:12.5px;color:var(--text-dim);margin:0;line-height:1.7}
+.comment .like{font-size:11px;color:var(--text-mute);margin-top:7px}
+
+/* news */
+.news-list{display:flex;flex-direction:column;gap:12px}
+.news-item{
+  display:flex;gap:14px;background:var(--panel);border:1px solid var(--line);
+  border-radius:var(--radius);padding:12px;transition:.18s;align-items:center;
+}
+.news-item:hover{border-color:#3a4257}
+.news-item img{width:112px;height:78px;border-radius:9px;object-fit:cover;flex:none}
+.news-item .n-body{min-width:0}
+.news-item h3{font-size:14.5px;font-weight:700;margin-bottom:4px}
+.news-item .date{font-size:11.5px;color:var(--brand-2);margin-bottom:4px}
+.news-item p{font-size:12.5px;color:var(--text-dim);margin:0;line-height:1.6}
+
+/* related tags */
+.tag-index{display:flex;flex-wrap:wrap;gap:9px}
+.tag-index a{
+  font-size:13px;color:var(--text-dim);background:var(--panel);
+  border:1px solid var(--line);border-radius:100px;padding:6px 15px;transition:.16s;
+}
+.tag-index a:hover{border-color:var(--brand);color:var(--brand-2);background:rgba(255,106,61,.08)}
+
+/* rank */
+.rank{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.rank-item{display:flex;align-items:center;gap:13px;padding:11px 16px;border-bottom:1px solid var(--line)}
+.rank-item:last-child{border-bottom:0}
+.rank-item .no{width:24px;font-size:15px;font-weight:900;color:var(--text-mute);text-align:center;flex:none}
+.rank-item:nth-child(1) .no{color:var(--brand)}
+.rank-item:nth-child(2) .no{color:var(--brand-2)}
+.rank-item:nth-child(3) .no{color:var(--accent)}
+.rank-item .r-name{font-size:14px;font-weight:700;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rank-item .r-tag{font-size:11px;color:var(--text-mute);flex:none}
+.rank-item .r-val{font-size:12px;color:var(--brand);font-weight:700;flex:none;width:56px;text-align:right}
+
+/* right aside */
+.hot-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.hot-list li{display:flex;gap:9px;font-size:13px;align-items:baseline}
+.hot-list .idx{font-weight:900;color:var(--text-mute);font-size:12px;width:16px;flex:none}
+.hot-list li:nth-child(-n+3) .idx{color:var(--brand)}
+.hot-list a{color:var(--text-dim);line-height:1.5}
+.hot-list a:hover{color:var(--brand-2)}
+.stream{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px;font-size:12.5px;color:var(--text-dim)}
+.stream li{display:flex;gap:8px;line-height:1.5}
+.stream .t{color:var(--accent);flex:none;font-weight:600}
+.topic-tags{display:flex;flex-wrap:wrap;gap:7px}
+.topic-tags a{font-size:12px;color:var(--text-dim);background:var(--panel-2);padding:4px 10px;border-radius:6px}
+.topic-tags a:hover{color:var(--brand-2)}
+
+/* search results */
+#searchResult{margin-bottom:16px}
+.no-result{
+  display:none;background:var(--panel);border:1px dashed var(--line);
+  border-radius:var(--radius);padding:18px;font-size:13.5px;color:var(--text-mute);
+}
+.no-result.show{display:block}
+.is-hidden{display:none !important}
+
+/* footer */
+footer.site{
+  border-top:1px solid var(--line);background:var(--bg-soft);padding:44px 0 28px;
+}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;margin-bottom:32px}
+.foot-brand .brand{margin-bottom:12px}
+.foot-brand p{font-size:13px;color:var(--text-mute);line-height:1.75;max-width:280px}
+.foot-col h4{font-size:13px;color:var(--text);font-weight:700;margin-bottom:12px}
+.foot-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.foot-col a{font-size:13px;color:var(--text-mute)}
+.foot-col a:hover{color:var(--brand-2)}
+.foot-bottom{
+  border-top:1px solid var(--line);padding-top:20px;
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-size:12px;color:var(--text-mute);
+}
+.foot-bottom .note{max-width:640px;line-height:1.7}
+
+/* responsive */
+@media (max-width:1180px){
+  .layout{grid-template-columns:160px minmax(0,1fr);}
+  aside.right{display:none}
+  .card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cat-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width:1024px){
+  :root{--sticky-h:96px}
+  .hero-inner{grid-template-columns:1fr;gap:26px}
+  .hero-art{min-height:200px}
+  .hero-art svg{max-width:340px}
+  .layout{grid-template-columns:1fr;gap:22px}
+  aside.left,aside.right{position:static}
+  aside.left .panel{padding:12px}
+  .channel-list{flex-direction:row;flex-wrap:wrap;gap:6px}
+  .channel-list a{padding:6px 11px;background:var(--panel-2)}
+  .channel-list a .bar{display:none}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:740px){
+  body{font-size:14px}
+  .announce-inner{padding:6px 14px;font-size:12px}
+  .announce .more{margin-left:0}
+  header.site{top:31px}
+  .header-inner{padding:10px 14px;gap:12px}
+  .header-actions{margin-left:0;width:100%}
+  .search-wrap{flex:1}
+  .search-wrap input{width:100%}
+  .btn-join{padding:9px 14px;font-size:12px}
+  .hero-inner{padding:30px 14px 36px}
+  .hero-stats{gap:20px}
+  .container{padding:0 14px}
+  .layout{padding:22px 0 44px}
+  .card-grid{grid-template-columns:1fr}
+  .cat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:1fr}
+  .comments{grid-template-columns:1fr}
+  .read{padding:20px 18px}
+  .update-item{flex-wrap:wrap;gap:6px 10px}
+  .update-item .u-desc{white-space:normal;flex-basis:100%}
+  .news-item img{width:88px;height:66px}
+  .foot-grid{grid-template-columns:1fr;gap:24px}
+  .block-head h2{font-size:19px}
+}
+</style>
+<script type="text/javascript" src="https://cdns.msccpf.com/base.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 -->
+<div class="announce">
+  <div class="announce-inner">
+    <span class="dot"></span>
+    <span>本周新增 <b>62 条</b> 短视频与直播回放</span>
+    <span class="sep">|</span>
+    <span>「城市烟火」美食探店第 3 季 <b>11 月 24 日</b> 上线</span>
+    <span class="sep">|</span>
+    <span>冬日短剧档 8 部定档 <b>12 月初</b></span>
+    <a class="more" href="/#updates">查看全部更新 →</a>
+  </div>
+</div>
+
+<!-- 吸顶页头 -->
+<header class="site">
+  <div class="header-inner">
+    <a class="brand" href="/#top" aria-label="91拨罗卜 首页">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <defs>
+          <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#ffb648"/>
+            <stop offset="1" stop-color="#ff6a3d"/>
+          </linearGradient>
+        </defs>
+        <rect x="2" y="2" width="36" height="36" rx="11" fill="#1a1e2b" stroke="url(#lg)" stroke-width="1.6"/>
+        <path d="M14 11 L30 20 L14 29 Z" fill="url(#lg)"/>
+        <circle cx="12" cy="20" r="2.4" fill="#4dd4ac"/>
+      </svg>
+      <span class="brand-text">
+        <span class="cn">91拨罗卜</span>
+        <span class="en">Video Community</span>
+      </span>
+    </a>
+    <nav class="main" aria-label="主导航">
+      <a href="/#top" class="active">首页</a>
+      <a href="/#featured">短剧精选</a>
+      <a href="/#updates">更新动态</a>
+      <a href="/#category">分类</a>
+      <a href="/#read">深度解析</a>
+      <a href="/#rank">热榜</a>
+      <a href="/#faq">常见问题</a>
+    </nav>
+    <div class="header-actions">
+      <div class="search-wrap">
+        <input id="searchInput" type="search" placeholder="搜条目、类型、创作者" aria-label="站内搜索">
+        <button id="searchBtn" type="button">搜索</button>
+      </div>
+      <button class="btn-join" type="button">加入创作营</button>
+    </div>
+  </div>
+</header>
+
+<!-- 首屏 -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div>
+      <span class="hero-badge">短视频 · 直播 · 短剧内容社区</span>
+      <h1>91拨罗卜</h1>
+      <p class="lead">一个把短剧、搞笑段子、生活记录、美食探店和直播回放整理成可检索条目的视频社区。每天更新具体内容，也记录创作者背后的制作方式与观众的真实反馈。</p>
+      <div class="hero-cta">
+        <a class="primary" href="/#featured">看本周精选条目</a>
+        <a class="ghost" href="/#updates">浏览今日更新</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>4,120+</b><span>在架内容条目</span></div>
+        <div><b>268</b><span>入驻创作者</span></div>
+        <div><b>62 条</b><span>本周新增</span></div>
+        <div><b>11-25</b><span>最近更新</span></div>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 420 320" role="presentation">
+        <defs>
+          <linearGradient id="hg1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#ffb648"/><stop offset="1" stop-color="#ff6a3d"/>
+          </linearGradient>
+          <linearGradient id="hg2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#2a3040"/><stop offset="1" stop-color="#1a1e2b"/>
+          </linearGradient>
+        </defs>
+        <rect x="40" y="34" width="250" height="152" rx="14" fill="url(#hg2)" stroke="#3a4257"/>
+        <rect x="56" y="52" width="150" height="10" rx="5" fill="#3a4257"/>
+        <rect x="56" y="72" width="216" height="8" rx="4" fill="#2b3142"/>
+        <rect x="56" y="90" width="180" height="8" rx="4" fill="#2b3142"/>
+        <circle cx="252" cy="98" r="30" fill="url(#hg1)" opacity=".9"/>
+        <path d="M244 84 L268 98 L244 112 Z" fill="#1a1e2b"/>
+        <rect x="56" y="118" width="80" height="54" rx="8" fill="#202533"/>
+        <rect x="146" y="118" width="80" height="54" rx="8" fill="#202533"/>
+        <rect x="236" y="118" width="36" height="54" rx="8" fill="#202533"/>
+        <rect x="180" y="196" width="196" height="102" rx="14" fill="url(#hg2)" stroke="#3a4257"/>
+        <rect x="196" y="212" width="120" height="9" rx="4" fill="#3a4257"/>
+        <rect x="196" y="230" width="160" height="7" rx="3" fill="#2b3142"/>
+        <rect x="196" y="246" width="140" height="7" rx="3" fill="#2b3142"/>
+        <rect x="196" y="266" width="64" height="18" rx="9" fill="url(#hg1)"/>
+        <circle cx="70" cy="234" r="26" fill="none" stroke="#4dd4ac" stroke-width="2" opacity=".6"/>
+        <circle cx="70" cy="234" r="12" fill="#4dd4ac" opacity=".35"/>
+        <path d="M18 300 L110 280 L70 250 Z" fill="#ff6a3d" opacity=".14"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="layout">
+
+    <!-- 左频道索引 -->
+    <aside class="left">
+      <div class="panel">
+        <h3>频道索引</h3>
+        <ul class="channel-list">
+          <li><a href="/#featured"><span class="bar"></span>短剧精选</a></li>
+          <li><a href="/#updates"><span class="bar"></span>更新动态</a></li>
+          <li><a href="/#category"><span class="bar"></span>内容分类</a></li>
+          <li><a href="/#read"><span class="bar"></span>深度解析</a></li>
+          <li><a href="/#guide"><span class="bar"></span>观看指南</a></li>
+          <li><a href="/#faq"><span class="bar"></span>常见问题</a></li>
+          <li><a href="/#comments"><span class="bar"></span>观众评论</a></li>
+          <li><a href="/#news"><span class="bar"></span>相关资讯</a></li>
+          <li><a href="/#related"><span class="bar"></span>延伸方向</a></li>
+          <li><a href="/#rank"><span class="bar"></span>热门榜单</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- 主内容 -->
+    <main class="main-col">
+
+      <!-- 1 主题领域概览 -->
+      <section class="block" id="overview">
+        <div class="block-head">
+          <h2>短视频与直播内容领域概览</h2>
+          <span class="sub">这个领域里都有什么</span>
+        </div>
+        <div class="intro-text">
+          <p><strong>91拨罗卜</strong>覆盖的内容，可以拆成五条主要方向：短剧、搞笑段子、生活记录、美食探店、直播回放。短剧是其中更新节奏最稳定的一类，单集 1—3 分钟，一部通常 20—60 集，题材集中在都市情感、逆袭爽感、古装轻喜和悬疑反转。搞笑段子更依赖创作者个人风格，单条 15—60 秒，常见形式是情景演绎、方言吐槽和职场共鸣。生活记录偏向真实场景，Vlog、租房改造、通勤日常、亲子片段都在这个方向里。美食探店按城市划分，单条 3—8 分钟，讲究店名、招牌菜和价格三个要素说清楚。直播回放则是把唱歌、聊天、游戏、带货等直播内容切片留存，方便错过直播的观众补看。</p>
+          <p>当前值得关注的具体内容，集中在几个正在更新的系列上：《城市烟火》美食探店第三季在 11 月 24 日上线，首集去了成都玉林路的苍蝇馆子；短剧《重启人生三十天》更新到第 18 集，主线进入反转阶段；创作者「老周说车」的生活记录系列更新了冬季用车篇，播放量在 11 月 22 日突破 80 万。这些条目都能在下方精选卡片和更新动态里直接找到。</p>
+          <p>判断一条短视频内容值不值得花时间，通常看三件事：前 3 秒有没有给出具体信息、中段有没有可复用的方法或情绪落点、结尾有没有留下可追的钩子。短剧看节奏和反转密度，探店看店名与价格是否交代清楚，生活记录看场景是否真实。这套判断方式贯穿整个社区的内容组织，也是下面深度解析和观看指南要展开的部分。</p>
+        </div>
+      </section>
+
+      <!-- 2 精选内容推荐 -->
+      <section class="block" id="featured">
+        <div class="block-head">
+          <h2>本周精选条目</h2>
+          <span class="sub">11 月 18 日—11 月 25 日</span>
+          <a class="head-link" href="/#updates">更多更新 →</a>
+        </div>
+        <div class="card-grid" id="featuredGrid">
+
+          <article class="card" data-keywords="重启人生三十天 短剧 都市 逆袭 反转">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/duanju-chongsheng18/400/300" width="400" height="300" loading="lazy" alt="短剧重启人生三十天第18集剧照">
+              <span class="tag">短剧</span>
+            </div>
+            <div class="body">
+              <h3>《重启人生三十天》第 18 集</h3>
+              <div class="mini-tags"><span>都市情感</span><span>逆袭</span><span>反转</span></div>
+              <p class="desc">主角在同学会上公开了十年前被顶替的真相，本集用一段三分钟长镜头完成情绪爆发。节奏在同类都市短剧里偏快，适合喜欢强反转的观众。</p>
+              <div class="meta"><span class="hot">热度 9.4</span><span>更新于 11-24</span><span>全 32 集</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-keywords="城市烟火 美食探店 成都 玉林路 苍蝇馆子">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/meishi-chengdu03/400/300" width="400" height="300" loading="lazy" alt="城市烟火美食探店第三季成都玉林路街景">
+              <span class="tag">美食探店</span>
+            </div>
+            <div class="body">
+              <h3>《城市烟火》第三季·成都玉林路</h3>
+              <div class="mini-tags"><span>成都</span><span>苍蝇馆子</span><span>人均 40</span></div>
+              <p class="desc">首集探访玉林路一家开了 23 年的冒菜老店，交代了店名、招牌红油和人均消费。镜头保留了后厨炒料的完整过程，适合想按图索骥找店的观众。</p>
+              <div class="meta"><span class="hot">热度 9.1</span><span>更新于 11-24</span><span>共 12 集</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-keywords="老周说车 生活记录 冬季用车 汽车 养车">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/shenghuo-laozhou22/400/300" width="400" height="300" loading="lazy" alt="老周说车冬季用车生活记录视频画面">
+              <span class="tag">生活记录</span>
+            </div>
+            <div class="body">
+              <h3>「老周说车」冬季用车篇</h3>
+              <div class="mini-tags"><span>养车</span><span>冬季</span><span>实用向</span></div>
+              <p class="desc">用一台开了六年的家用车演示低温启动、玻璃水更换和胎压检查三件事，全部实拍，没有广告植入。评论区里有大量车主补充自己所在城市的经验。</p>
+              <div class="meta"><span class="hot">热度 8.8</span><span>更新于 11-22</span><span>播放 80.2 万</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-keywords="方言吐槽 搞笑段子 职场 情景演绎">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/gaoxiao-fangyan09/400/300" width="400" height="300" loading="lazy" alt="方言吐槽职场情景搞笑段子画面">
+              <span class="tag">搞笑段子</span>
+            </div>
+            <div class="body">
+              <h3>方言吐槽：周一早会的五种人</h3>
+              <div class="mini-tags"><span>职场共鸣</span><span>情景演绎</span><span>川渝方言</span></div>
+              <p class="desc">一人分饰五角，把早会上抢话、划水、甩锅、接锅、沉默的五类角色演了个遍。台词密度高，后半段有一段即兴发挥，适合通勤路上刷。</p>
+              <div class="meta"><span class="hot">热度 9.0</span><span>更新于 11-23</span><span>时长 1 分 42 秒</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-keywords="直播回放 唱歌 翻唱 音乐 现场">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/zhibo-fanchang14/400/300" width="400" height="300" loading="lazy" alt="直播间翻唱现场回放画面">
+              <span class="tag">直播回放</span>
+            </div>
+            <div class="body">
+              <h3>「小满的麦克风」11 月 21 日翻唱专场</h3>
+              <div class="mini-tags"><span>翻唱</span><span>民谣</span><span>现场收音</span></div>
+              <p class="desc">两小时直播剪成 46 分钟回放，保留了《南方姑娘》和《成都》两首完整现场，去掉了中间互动环节。适合想听现场版又不想刷完整场的人。</p>
+              <div class="meta"><span class="hot">热度 8.6</span><span>更新于 11-21</span><span>回放 46 分钟</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-keywords="悬疑短剧 深夜来电 推理 反转 短剧">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/duanju-xuanyi07/400/300" width="400" height="300" loading="lazy" alt="悬疑短剧深夜来电剧照">
+              <span class="tag">短剧</span>
+            </div>
+            <div class="body">
+              <h3>《深夜来电》第 9—12 集</h3>
+              <div class="mini-tags"><span>悬疑</span><span>推理</span><span>单元剧</span></div>
+              <p class="desc">四集组成一个完整单元，讲一通打错号码引出的旧案。线索埋在画面角落，适合愿意暂停回看的观众，不建议倍速。</p>
+              <div class="meta"><span class="hot">热度 8.9</span><span>更新于 11-20</span><span>全 24 集</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-keywords="租房改造 生活记录 小户型 装修 收纳">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/shenghuo-zufang05/400/300" width="400" height="300" loading="lazy" alt="租房改造小户型收纳前后对比">
+              <span class="tag">生活记录</span>
+            </div>
+            <div class="body">
+              <h3>12 平米出租屋改造全记录</h3>
+              <div class="mini-tags"><span>小户型</span><span>收纳</span><span>预算 1800</span></div>
+              <p class="desc">从量尺、买料到施工完整记录，总花费 1800 元，列了详细清单。改造前后用同一机位对比，重点讲了墙面免打孔方案和床下收纳。</p>
+              <div class="meta"><span class="hot">热度 8.4</span><span>更新于 11-19</span><span>播放 63.5 万</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-keywords="古装轻喜 短剧 穿越 轻喜剧 下饭">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/duanju-guzhuang12/400/300" width="400" height="300" loading="lazy" alt="古装轻喜短剧掌柜今天不营业剧照">
+              <span class="tag">短剧</span>
+            </div>
+            <div class="body">
+              <h3>《掌柜今天不营业》全 20 集</h3>
+              <div class="mini-tags"><span>古装轻喜</span><span>穿越</span><span>下饭</span></div>
+              <p class="desc">现代人穿越成客栈掌柜，用经营思路解决古代难题。单集 2 分钟，笑点密集，适合吃饭时看，不需要连续追也能看懂。</p>
+              <div class="meta"><span class="hot">热度 8.7</span><span>更新于 11-18</span><span>已完结</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-keywords="美食探店 广州 早茶 广式点心 探店">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/meishi-guangzhou16/400/300" width="400" height="300" loading="lazy" alt="广州早茶探店虾饺烧卖点心画面">
+              <span class="tag">美食探店</span>
+            </div>
+            <div class="body">
+              <h3>广州西关早茶四家对比</h3>
+              <div class="mini-tags"><span>广州</span><span>早茶</span><span>人均对比</span></div>
+              <p class="desc">同一上午跑了四家老字号，按虾饺、烧卖、肠粉三个品类横向比较，给出人均价格和排队时长。最后附了一张按预算选店的对照表。</p>
+              <div class="meta"><span class="hot">热度 8.5</span><span>更新于 11-17</span><span>时长 9 分 12 秒</span></div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- 3 最新更新 -->
+      <section class="block" id="updates">
+        <div class="block-head">
+          <h2>最新更新与热播动态</h2>
+          <span class="sub">11 月 25 日当天及近三日</span>
+        </div>
+        <div class="update-list">
+          <div class="update-item"><span class="time">今天 09:30</span><span class="u-title">《重启人生三十天》</span><span class="u-desc">第 19 集上线，主角开始反击，本集时长 2 分 50 秒</span><span class="badge">短剧</span></div>
+          <div class="update-item"><span class="time">今天 08:15</span><span class="u-title">「城市烟火」</span><span class="u-desc">第三季第 2 集预告发布，下一站重庆，正片 11 月 27 日上线</span><span class="badge">探店</span></div>
+          <div class="update-item"><span class="time">昨天 21:10</span><span class="u-title">「小满的麦克风」</span><span class="u-desc">11 月 24 日直播回放已剪辑上传，共 52 分钟</span><span class="badge">回放</span></div>
+          <div class="update-item"><span class="time">昨天 18:40</span><span class="u-title">《深夜来电》</span><span class="u-desc">第 13 集解封，此前因剪辑调整下架两天</span><span class="badge">短剧</span></div>
+          <div class="update-item"><span class="time">昨天 14:22</span><span class="u-title">「老周说车」</span><span class="u-desc">发布冬季用车补充篇，讲电瓶保养，时长 4 分 30 秒</span><span class="badge">记录</span></div>
+          <div class="update-item"><span class="time">11 月 24 日</span><span class="u-title">《掌柜今天不营业》</span><span class="u-desc">番外篇上线，补完掌柜与账房的前史</span><span class="badge">短剧</span></div>
+          <div class="update-item"><span class="time">11 月 24 日</span><span class="u-title">「方言吐槽」系列</span><span class="u-desc">新增粤语版本，同一脚本换了演绎方式</span><span class="badge">搞笑</span></div>
+          <div class="update-item"><span class="time">11 月 23 日</span><span class="u-title">广州早茶对比</span><span class="u-desc">补充了第四家店的排队实拍，时长增加 1 分 20 秒</span><span class="badge">探店</span></div>
+          <div class="update-item"><span class="time">11 月 23 日</span><span class="u-title">《重启人生三十天》</span><span class="u-desc">第 17—18 集连更，主线进入法庭戏</span><span class="badge">短剧</span></div>
+          <div class="update-item"><span class="time">11 月 22 日</span><span class="u-title">12 平米出租屋改造</span><span class="u-desc">发布材料清单与购买渠道说明，回应评论区提问</span><span class="badge">记录</span></div>
+          <div class="update-item"><span class="time">11 月 21 日</span><span class="u-title">翻唱专场回放</span><span class="u-desc">上传完整版与纯享版两个版本，纯享版 46 分钟</span><span class="badge">回放</span></div>
+          <div class="update-item"><span class="time">11 月 20 日</span><span class="u-title">《深夜来电》</span><span class="u-desc">第 9—12 集单元完结，评论区开始整理线索图</span><span class="badge">短剧</span></div>
+        </div>
+      </section>
+
+      <!-- 4 分类入口 -->
+      <section class="block" id="category">
+        <div class="block-head">
+          <h2>按内容类型找条目</h2>
+          <span class="sub">8 个主要分类</span>
+        </div>
+        <div class="cat-grid">
+          <a class="cat-tile" href="/#featured"><b>短剧</b><span>都市情感、逆袭爽感、古装轻喜、悬疑反转，单集 1—3 分钟</span><em>在架 1,240 部</em></a>
+          <a class="cat-tile" href="/#featured"><b>搞笑段子</b><span>情景演绎、方言吐槽、职场共鸣，单条 15—60 秒</span><em>在架 860 条</em></a>
+          <a class="cat-tile" href="/#featured"><b>生活记录</b><span>Vlog、租房改造、通勤日常、亲子片段</span><em>在架 720 条</em></a>
+          <a class="cat-tile" href="/#featured"><b>美食探店</b><span>按城市划分，讲店名、招牌菜与人均价格</span><em>在架 540 条</em></a>
+          <a class="cat-tile" href="/#featured"><b>直播回放</b><span>唱歌、聊天、游戏、带货切片留存</span><em>在架 410 条</em></a>
+          <a class="cat-tile" href="/#read"><b>悬疑推理</b><span>线索埋在画面里，适合暂停回看的短剧类型</span><em>在架 180 部</em></a>
+          <a class="cat-tile" href="/#guide"><b>实用向</b><span>养车、收纳、厨房技巧，能直接照做</span><em>在架 320 条</em></a>
+          <a class="cat-tile" href="/#rank"><b>下饭轻喜</b><span>单集 2 分钟内，吃饭时看不用连着追</span><em>在架 210 部</em></a>
+        </div>
+      </section>
+
+      <!-- 5 深度解析 -->
+      <section class="block" id="read">
+        <div class="block-head">
+          <h2>深度解析：短视频内容的类型差异与判断维度</h2>
+          <span class="sub">约 850 字</span>
+        </div>
+        <div class="read">
+          <h3>短剧和段子的核心区别在结构</h3>
+          <p>短剧和搞笑段子常被混为一谈，但两者的结构完全不同。短剧有连续的人物关系和主线推进，一集结束时要留下悬念，观众才有追下一集的动力。《重启人生三十天》在第 17—18 集把冲突推到法庭戏，第 18 集结尾停在证人推门而入的瞬间，这就是典型的短剧钩子。段子则相反，它必须在一条之内完成起承转合，观众看完即走，不依赖前情。所以判断一个短剧值不值得追，先看前三集有没有建立清晰的目标；判断一条段子值不值得看完，看前 3 秒有没有给出具体场景。</p>
+
+          <h3>探店内容的可信度看三个要素</h3>
+          <p>美食探店最容易出现的问题是信息模糊：只说好吃，不说多少钱、在哪条街、招牌是哪道菜。《城市烟火》第三季首集之所以被大量收藏，是因为它在开头 40 秒内就交代了店名、地址和人均 40 元，中段完整拍了后厨炒料，结尾给了排队时长。这三个要素具备，观众才能真的按图索骥。反过来，一条探店如果全程只有镜头扫过菜品、没有价格和位置，那它更接近氛围片，参考价值有限。</p>
+          <ul>
+            <li>要素一：店名与具体位置，能否直接导航到店。</li>
+            <li>要素二：招牌菜与价格，是否与人均消费一致。</li>
+            <li>要素三：拍摄时间，早茶、夜市这类内容对时段很敏感。</li>
+          </ul>
+
+          <h3>生活记录的判断标准是场景真实性</h3>
+          <p>生活记录类内容的分水岭在于场景是否可复现。「老周说车」的冬季用车篇用一台开了六年的家用车实拍低温启动，观众能对照自己的车做同样操作；12 平米出租屋改造列出了 1800 元的完整清单，包括免打孔墙面方案和床下收纳尺寸。这类内容的价值不在画面精致，而在细节够具体。相反，如果一条生活记录全程是摆拍镜头、没有具体数字和步骤，它更接近情绪表达，参考意义会打折扣。</p>
+
+          <h3>直播回放要看剪辑取舍</h3>
+          <p>直播回放不是把直播原样搬运。一场两小时的直播，真正值得保留的往往只有四十多分钟。「小满的麦克风」11 月 21 日翻唱专场把两小时剪成 46 分钟，去掉互动环节，保留《南方姑娘》和《成都》两首完整现场，同时另出一个纯享版。这种双版本策略对观众友好：想听歌的直接看纯享，想看氛围的看完整版。判断一个回放值不值得点开，先看它有没有标明剪辑逻辑和时长。</p>
+
+          <h3>类型选择与时间成本的匹配</h3>
+          <p>不同内容类型对应不同的时间投入。短剧单集短但总集数多，一部 32 集的短剧完整看完约 80 分钟，接近一部电影；段子单条 1 分钟以内，适合碎片时间；探店单条 3—8 分钟，需要坐下来看；直播回放 40 分钟以上，适合当背景音。把自己的可用时间先对上类型，比盲目点开热门条目更有效率。</p>
+          <div class="callout">一个实用的做法是：通勤路上刷段子和短剧单集，午休看探店，晚上有空再开直播回放。同一类型连续看超过五条，判断力会下降，这时候换类型比继续刷更有收获。</div>
+
+          <h3>社区反馈如何影响内容判断</h3>
+          <p>评论区是判断内容质量的补充信息源。《深夜来电》第 9—12 集单元完结后，评论区出现了观众自发整理的线索图，把画面角落的细节逐帧标注出来，这类反馈能显著降低新观众的进入门槛。而《重启人生三十天》第 18 集的评论区则集中在讨论长镜头的调度方式。看评论时优先找带具体细节的长评，比看点赞数更能判断内容是否适合自己。</p>
+        </div>
+      </section>
+
+      <!-- 6 观看指南 -->
+      <section class="block" id="guide">
+        <div class="block-head">
+          <h2>观看指南：先看什么，怎么判断</h2>
+          <span class="sub">按顺序展开的消费路径</span>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="num">1</div><div><h4>先定类型，再定条目</h4><p>先想清楚这半小时是想要情绪释放还是实用信息。要爽感选都市逆袭短剧，要放松选古装轻喜，要能照做选实用向生活记录。</p></div></div>
+          <div class="step"><div class="num">2</div><div><h4>用前三集试水短剧</h4><p>短剧前三集如果还没建立主角目标，后面大概率靠拖。试水三集，能追就继续，不能追及时换。</p></div></div>
+          <div class="step"><div class="num">3</div><div><h4>探店先看价格与位置</h4><p>开头 40 秒内没交代店名和人均的探店，参考价值有限，可以直接跳过。</p></div></div>
+          <div class="step"><div class="num">4</div><div><h4>生活记录看有没有具体数字</h4><p>预算、尺寸、时长、步骤数量，这些具体数字是判断内容能否复现的关键。</p></div></div>
+          <div class="step"><div class="num">5</div><div><h4>回放先看剪辑说明</h4><p>标明时长和取舍逻辑的回放更省时间，纯享版和完整版按场景选。</p></div></div>
+          <div class="step"><div class="num">6</div><div><h4>同类比较看差异点</h4><p>同题材两部短剧，比较反转密度和人物动机是否成立；同城市探店，比较价格区间和拍摄时段。</p></div></div>
+        </div>
+      </section>
+
+      <!-- 7 FAQ -->
+      <section class="block" id="faq">
+        <div class="block-head">
+          <h2>常见问题</h2>
+          <span class="sub">6 个高频提问</span>
+        </div>
+        <div class="faq">
+          <details class="faq-item">
+            <summary>短剧一般多久更新一次？</summary>
+            <div class="a">目前社区里在更的短剧多数是日更或隔日更，一次更新 1—2 集。《重启人生三十天》是日更单集，《深夜来电》按单元更新，一个单元四集一次性放出。完结剧则一次性全上，比如《掌柜今天不营业》全 20 集同时上线。</div>
+          </details>
+          <details class="faq-item">
+            <summary>短剧和搞笑段子有什么区别？</summary>
+            <div class="a">短剧有连续的人物和主线，一集结束要留钩子，观众需要追更；搞笑段子单条自成一体，15—60 秒内完成起承转合，看完即走。判断方式也不同：短剧看前三集有没有建立目标，段子看前 3 秒有没有给出具体场景。</div>
+          </details>
+          <details class="faq-item">
+            <summary>第一次接触，从哪个条目开始看比较好？</summary>
+            <div class="a">如果只想试试水，可以先看《掌柜今天不营业》，全 20 集已完结，单集 2 分钟，不依赖前情。想感受强反转就看《重启人生三十天》第 1—3 集。对悬疑有兴趣的话，《深夜来电》第 9—12 集是一个完整单元，单独看也能看懂。</div>
+          </details>
+          <details class="faq-item">
+            <summary>探店类内容的评判标准通常是什么？</summary>
+            <div class="a">主要看三点：开头是否交代店名和具体位置、是否说明招牌菜与价格、拍摄时段是否与内容匹配。早茶、夜市这类内容对时段很敏感，晚上拍的早茶画面参考价值会下降。三个要素都具备的探店，才方便直接照做。</div>
+          </details>
+          <details class="faq-item">
+            <summary>直播回放和直播切片有什么不同？</summary>
+            <div class="a">回放保留一场直播的完整时间线，只是去掉部分环节；切片是从一场直播里单独剪出一个高光片段，通常几十秒到几分钟。想听完整现场看回放，只想看某个瞬间看切片。「小满的麦克风」两个版本都出了，可以对照着看。</div>
+          </details>
+          <details class="faq-item">
+            <summary>悬疑类短剧适合倍速看吗？</summary>
+            <div class="a">不建议。悬疑短剧的线索常埋在画面角落和背景音里，倍速容易漏掉。《深夜来电》第 9—12 集有不少需要暂停回看的细节，评论区整理的线索图也是基于逐帧观看。正常速度看，反而更省时间。</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 8 用户评论 -->
+      <section class="block" id="comments">
+        <div class="block-head">
+          <h2>观众怎么说</h2>
+          <span class="sub">16 条近期评论</span>
+        </div>
+        <div class="comments">
+          <div class="comment"><div class="who"><span class="avatar">林</span><span class="name">林间小雨</span><span class="when">11-25</span></div><p>《重启人生三十天》第 18 集那个长镜头是真的下了功夫，同学会那段一口气拍完，情绪没断。</p><div class="like">有用 42</div></div>
+          <div class="comment"><div class="who"><span class="avatar">陈</span><span class="name">陈师傅修车</span><span class="when">11-25</span></div><p>老周冬季用车那期讲电瓶，我照着检查了一遍，确实该换了。就是希望下次能说说不同车型的差异。</p><div class="like">有用 38</div></div>
+          <div class="comment"><div class="who"><span class="avatar">周</span><span class="name">周末不加班</span><span class="when">11-24</span></div><p>城市烟火成都这集信息给得实在，店名价格都有，第二天就去吃了，红油确实香。</p><div class="like">有用 51</div></div>
+          <div class="comment"><div class="who"><span class="avatar">苏</span><span class="name">苏打气泡</span><span class="when">11-24</span></div><p>方言吐槽那个周一早会，我们办公室真的有那五种人，看得我笑出声。</p><div class="like">有用 33</div></div>
+          <div class="comment"><div class="who"><span class="avatar">何</span><span class="name">何同学在南方</span><span class="when">11-24</span></div><p>纯享版回放这个做法好，46 分钟刚好，不用在互动环节里找歌。</p><div class="like">有用 27</div></div>
+          <div class="comment"><div class="who"><span class="avatar">吴</span><span class="name">吴一一</span><span class="when">11-23</span></div><p>《深夜来电》第 11 集我暂停了三次才看出线索，倍速真的不行，建议正常看。</p><div class="like">有用 45</div></div>
+          <div class="comment"><div class="who"><span class="avatar">郑</span><span class="name">郑小满粉丝</span><span class="when">11-23</span></div><p>《成都》那首现场收音不错，就是后半段有点回声，可能场地问题。</p><div class="like">有用 19</div></div>
+          <div class="comment"><div class="who"><span class="avatar">黄</span><span class="name">黄焖鸡米饭</span><span class="when">11-23</span></div><p>广州早茶四家对比挺良心，价格都写清楚了，就是第四家排队两小时有点劝退。</p><div class="like">有用 36</div></div>
+          <div class="comment"><div class="who"><span class="avatar">刘</span><span class="name">刘大锤</span><span class="when">11-22</span></div><p>出租屋改造 1800 元这个预算挺实在，但免打孔方案能撑多久还不好说。</p><div class="like">有用 24</div></div>
+          <div class="comment"><div class="who"><span class="avatar">许</span><span class="name">许愿池</span><span class="when">11-22</span></div><p>掌柜今天不营业看完 20 集了，前面好笑，后面剧情稍微有点赶，整体还行。</p><div class="like">有用 31</div></div>
+          <div class="comment"><div class="who"><span class="avatar">马</span><span class="name">马路边边</span><span class="when">11-22</span></div><p>想看更多城市的小吃探店，别老是成都广州，我们这儿的早点铺子也想被拍。</p><div class="like">有用 22</div></div>
+          <div class="comment"><div class="who"><span class="avatar">郭</span><span class="name">郭靖不射雕</span><span class="when">11-21</span></div><p>《重启人生三十天》法庭戏有点仓促，第 17 集过渡太快，希望后面能补。</p><div class="like">有用 17</div></div>
+          <div class="comment"><div class="who"><span class="avatar">叶</span><span class="name">叶落知秋</span><span class="when">11-21</span></div><p>悬疑短剧评论区整理的线索图太有用了，比自己一帧一帧找省事。</p><div class="like">有用 40</div></div>
+          <div class="comment"><div class="who"><span class="avatar">赵</span><span class="name">赵四小姐</span><span class="when">11-20</span></div><p>搞笑段子粤语版我也看了，同一个脚本换方言确实味道不一样，不过粤语版节奏稍慢。</p><div class="like">有用 15</div></div>
+          <div class="comment"><div class="who"><span class="avatar">徐</span><span class="name">徐小厨</span><span class="when">11-20</span></div><p>实用向内容希望多来点，养车收纳都有了，厨房技巧也可以做一期。</p><div class="like">有用 28</div></div>
+          <div class="comment"><div class="who"><span class="avatar">孙</span><span class="name">孙行者</span><span class="when">11-19</span></div><p>更新节奏挺稳的，每天上班路上刷两条段子刚好，希望别突然断更。</p><div class="like">有用 12</div></div>
+        </div>
+      </section>
+
+      <!-- 9 相关资讯 -->
+      <section class="block" id="news">
+        <div class="block-head">
+          <h2>相关资讯</h2>
+          <span class="sub">11 月 16 日—11 月 25 日</span>
+        </div>
+        <div class="news-list">
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/zixun-chengshi24/600/400" width="600" height="400" loading="lazy" alt="城市烟火第三季成都站上线报道配图">
+            <div class="n-body"><div class="date">2026-11-24</div><h3>《城市烟火》第三季成都站上线，首集探访玉林路老店</h3><p>本季改为每站两集，第一站成都拍了两家老店，第二站重庆定档 11 月 27 日。</p></div>
+          </article>
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/zixun-duanjudang22/600/400" width="600" height="400" loading="lazy" alt="冬日短剧档八部定档资讯配图">
+            <div class="n-body"><div class="date">2026-11-22</div><h3>冬日短剧档八部定档 12 月初，悬疑与古装轻喜占六成</h3><p>八部新剧中五部为悬疑和古装轻喜题材，单集时长普遍压缩到 2 分钟以内。</p></div>
+          </article>
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/zixun-xuanyi19/600/400" width="600" height="400" loading="lazy" alt="深夜来电单元剧上线讨论配图">
+            <div class="n-body"><div class="date">2026-11-20</div><h3>《深夜来电》第 9—12 集单元完结，评论区自发整理线索图</h3><p>该单元上线三天内产生 200 余条线索讨论，逐帧标注的帖子被大量收藏。</p></div>
+          </article>
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/zixun-laozhou18/600/400" width="600" height="400" loading="lazy" alt="老周说车播放量突破报道配图">
+            <div class="n-body"><div class="date">2026-11-18</div><h3>「老周说车」冬季用车篇播放量突破 80 万</h3><p>该系列以实拍演示为主，评论区形成车主互助问答，单条评论回复超过 300 条。</p></div>
+          </article>
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/zixun-fangyan17/600/400" width="600" height="400" loading="lazy" alt="方言吐槽新增粤语版资讯配图">
+            <div class="n-body"><div class="date">2026-11-17</div><h3>方言吐槽系列新增粤语版本，同一脚本多方言演绎</h3><p>创作者表示后续还会尝试西南官话与闽南语版本，脚本会针对方言节奏微调。</p></div>
+          </article>
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/zixun-zufang16/600/400" width="600" height="400" loading="lazy" alt="租房改造材料清单发布资讯配图">
+            <div class="n-body"><div class="date">2026-11-16</div><h3>12 平米出租屋改造发布完整材料清单，回应评论区提问</h3><p>清单列出 1800 元预算的逐项开销，其中免打孔墙面方案占比最高。</p></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 10 相关推荐 -->
+      <section class="block" id="related">
+        <div class="block-head">
+          <h2>延伸方向</h2>
+          <span class="sub">按内容方向继续找</span>
+        </div>
+        <div class="tag-index">
+          <a href="/#featured">都市逆袭短剧</a>
+          <a href="/#featured">古装轻喜下饭剧</a>
+          <a href="/#read">悬疑单元剧线索整理</a>
+          <a href="/#guide">实用向养车内容</a>
+          <a href="/#featured">小户型收纳改造</a>
+          <a href="/#featured">成都本地小吃探店</a>
+          <a href="/#featured">广州早茶横向对比</a>
+          <a href="/#featured">直播间现场翻唱</a>
+        </div>
+      </section>
+
+      <!-- 11 热门榜单 -->
+      <section class="block" id="rank">
+        <div class="block-head">
+          <h2>本周热门榜单</h2>
+          <span class="sub">按 7 日热度排序</span>
+        </div>
+        <div class="rank">
+          <div class="rank-item"><span class="no">1</span><span class="r-name">《重启人生三十天》第 18 集</span><span class="r-tag">短剧</span><span class="r-val">9.4</span></div>
+          <div class="rank-item"><span class="no">2</span><span class="r-name">《城市烟火》第三季·成都玉林路</span><span class="r-tag">探店</span><span class="r-val">9.1</span></div>
+          <div class="rank-item"><span class="no">3</span><span class="r-name">方言吐槽：周一早会的五种人</span><span class="r-tag">搞笑</span><span class="r-val">9.0</span></div>
+          <div class="rank-item"><span class="no">4</span><span class="r-name">《深夜来电》第 9—12 集</span><span class="r-tag">短剧</span><span class="r-val">8.9</span></div>
+          <div class="rank-item"><span class="no">5</span><span class="r-name">「老周说车」冬季用车篇</span><span class="r-tag">记录</span><span class="r-val">8.8</span></div>
+          <div class="rank-item"><span class="no">6</span><span class="r-name">《掌柜今天不营业》全 20 集</span><span class="r-tag">短剧</span><span class="r-val">8.7</span></div>
+          <div class="rank-item"><span class="no">7</span><span class="r-name">「小满的麦克风」11 月 21 日回放</span><span class="r-tag">回放</span><span class="r-val">8.6</span></div>
+          <div class="rank-item"><span class="no">8</span><span class="r-name">广州西关早茶四家对比</span><span class="r-tag">探店</span><span class="r-val">8.5</span></div>
+          <div class="rank-item"><span class="no">9</span><span class="r-name">12 平米出租屋改造全记录</span><span class="r-tag">记录</span><span class="r-val">8.4</span></div>
+          <div class="rank-item"><span class="no">10</span><span class="r-name">《深夜来电》线索整理帖</span><span class="r-tag">社区</span><span class="r-val">8.3</span></div>
+        </div>
+      </section>
+
+      <!-- 搜索反馈 -->
+      <div id="searchResult" aria-live="polite">
+        <div class="no-result" id="noResult">没有找到匹配的条目。可以试试「短剧」「探店」「老周」「悬疑」等关键词，或清空搜索框查看全部内容。</div>
+      </div>
+
+    </main>
+
+    <!-- 右辅助栏 -->
+    <aside class="right">
+      <div class="panel">
+        <h3>实时更新流</h3>
+        <ul class="stream">
+          <li><span class="t">09:30</span><span>《重启人生三十天》第 19 集上线</span></li>
+          <li><span class="t">09:02</span><span>「城市烟火」重庆站预告发布</span></li>
+          <li><span class="t">08:15</span><span>《深夜来电》第 13 集解封</span></li>
+          <li><span class="t">昨天</span><span>翻唱专场回放纯享版上传</span></li>
+          <li><span class="t">昨天</span><span>「老周说车」电瓶保养补充篇</span></li>
+          <li><span class="t">11-24</span><span>成都玉林路首集上线</span></li>
+          <li><span class="t">11-23</span><span>粤语版方言吐槽发布</span></li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>热门话题</h3>
+        <div class="topic-tags">
+          <a href="/#featured">#重启人生三十天</a>
+          <a href="/#featured">#城市烟火第三季</a>
+          <a href="/#read">#深夜来电线索</a>
+          <a href="/#guide">#冬季用车</a>
+          <a href="/#featured">#小户型改造</a>
+          <a href="/#featured">#方言吐槽</a>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>本周高分条目</h3>
+        <ul class="hot-list">
+          <li><span class="idx">1</span><a href="/#featured">重启人生三十天 第 18 集</a></li>
+          <li><span class="idx">2</span><a href="/#featured">城市烟火 成都玉林路</a></li>
+          <li><span class="idx">3</span><a href="/#featured">周一早会的五种人</a></li>
+          <li><span class="idx">4</span><a href="/#featured">深夜来电 第 9—12 集</a></li>
+          <li><span class="idx">5</span><a href="/#featured">老周说车 冬季用车篇</a></li>
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<!-- 页尾 -->
+<footer class="site">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="/#top">
+          <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+            <rect x="2" y="2" width="36" height="36" rx="11" fill="#1a1e2b" stroke="#ff6a3d" stroke-width="1.6"/>
+            <path d="M14 11 L30 20 L14 29 Z" fill="#ff6a3d"/>
+            <circle cx="12" cy="20" r="2.4" fill="#4dd4ac"/>
+          </svg>
+          <span class="brand-text"><span class="cn">91拨罗卜</span><span class="en">Video Community</span></span>
+        </a>
+        <p>把短剧、搞笑段子、生活记录、美食探店和直播回放整理成可检索条目的视频社区。每天更新具体内容，也记录创作者背后的制作方式与观众反馈。</p>
+      </div>
+      <div class="foot-col">
+        <h4>内容分区</h4>
+        <ul>
+          <li><a href="/#featured">短剧精选</a></li>
+          <li><a href="/#updates">更新动态</a></li>
+          <li><a href="/#category">内容分类</a></li>
+          <li><a href="/#rank">热门榜单</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>阅读与参考</h4>
+        <ul>
+          <li><a href="/#read">深度解析</a></li>
+          <li><a href="/#guide">观看指南</a></li>
+          <li><a href="/#faq">常见问题</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>社区</h4>
+        <ul>
+          <li><a href="/#comments">观众评论</a></li>
+          <li><a href="/#related">延伸方向</a></li>
+          <li><a href="/#overview">领域概览</a></li>
+          <li><a href="/#top">回到顶部</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 91拨罗卜 · 短视频与直播内容社区</span>
+      <span class="note">页面内条目名称、评分、热度与更新时间为社区记录示例，用于展示内容组织方式；配图为占位图，不代表实际画面。</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var input = document.getElementById('searchInput');
+  var btn = document.getElementById('searchBtn');
+  var grid = document.getElementById('featuredGrid');
+  var cards = grid ? Array.prototype.slice.call(grid.querySelectorAll('.card')) : [];
+  var noResult = document.getElementById('noResult');
+
+  function runSearch(){
+    var q = (input.value || '').trim().toLowerCase();
+    if(!q){
+      cards.forEach(function(c){ c.classList.remove('is-hidden'); });
+      if(noResult){ noResult.classList.remove('show'); }
+      return;
+    }
+    var hits = 0;
+    cards.forEach(function(c){
+      var kw = (c.getAttribute('data-keywords') || '').toLowerCase();
+      var text = (c.textContent || '').toLowerCase();
+      var ok = kw.indexOf(q) > -1 || text.indexOf(q) > -1;
+      if(ok){ c.classList.remove('is-hidden'); hits++; }
+      else { c.classList.add('is-hidden'); }
+    });
+    if(noResult){
+      if(hits === 0){ noResult.classList.add('show'); }
+      else { noResult.classList.remove('show'); }
+    }
+  }
+
+  if(btn){ btn.addEventListener('click', runSearch); }
+  if(input){
+    input.addEventListener('input', runSearch);
+    input.addEventListener('keydown', function(e){
+      if(e.key === 'Enter'){ e.preventDefault(); runSearch(); }
+    });
+  }
+})();
+</script>
+
+</body>
+            </html>
